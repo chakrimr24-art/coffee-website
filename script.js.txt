@@ -1,0 +1,45 @@
+let cart = [];
+let total = 0;
+
+function addToCart(name, price){
+  cart.push({name, price});
+  total += price;
+  showCart();
+}
+
+function showCart(){
+  let html = "";
+
+  cart.forEach(item=>{
+    html += `<p>${item.name} - ₹${item.price}</p>`;
+  });
+
+  document.getElementById("cart").innerHTML = html;
+  document.getElementById("total").innerText = "Total: ₹" + total;
+}
+
+function orderAll(){
+  let msg = "Order:\n";
+
+  cart.forEach(item=>{
+    msg += item.name + " - ₹" + item.price + "\n";
+  });
+
+  msg += "Total: ₹" + total;
+
+  window.open(`https://wa.me/91YOURNUMBER?text=${encodeURIComponent(msg)}`);
+}
+
+function sendMsg(){
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let msg = document.getElementById("msg").value;
+
+  let full = `Name:${name}\nEmail:${email}\nMsg:${msg}`;
+
+  window.open(`https://wa.me/91YOURNUMBER?text=${encodeURIComponent(full)}`);
+}
+
+function payNow(){
+  alert("Demo Payment");
+}

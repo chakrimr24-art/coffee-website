@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chakri Coffee</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>☕ Chakri Coffee</h1>
+  <p>Fresh Coffee. Real Taste.</p>
+  <a href="#menu"><button>Order Now</button></a>
+</div>
+
+<!-- MENU -->
+<h2 class="title" id="menu">Menu</h2>
+
+<div class="menu">
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348">
+    <h3>Espresso</h3>
+    <p>₹100</p>
+    <button onclick="addToCart('Espresso',100)">Add</button>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93">
+    <h3>Cappuccino</h3>
+    <p>₹150</p>
+    <button onclick="addToCart('Cappuccino',150)">Add</button>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735">
+    <h3>Latte</h3>
+    <p>₹180</p>
+    <button onclick="addToCart('Latte',180)">Add</button>
+  </div>
+
+</div>
+
+<!-- CART -->
+<h2 class="title">🛒 Cart</h2>
+<div id="cart"></div>
+<h3 id="total"></h3>
+<button onclick="orderAll()" class="order-btn">Order on WhatsApp</button>
+
+<!-- CONTACT -->
+<h2 class="title">📞 Contact Us</h2>
+<div class="contact">
+  <p>📍 Hyderabad</p>
+  <p>📞 +91 9876543210</p>
+  <p>📧 chakricoffee@gmail.com</p>
+</div>
+
+<h2 class="title">📩 Send Message</h2>
+<div class="form">
+  <input type="text" id="name" placeholder="Your Name"><br>
+  <input type="email" id="email" placeholder="Your Email"><br>
+  <textarea id="msg" placeholder="Your Message"></textarea><br>
+  <button onclick="sendMsg()">Send</button>
+</div>
+
+<h2 class="title">📍 Location</h2>
+<div class="map">
+  <iframe src="https://maps.google.com/maps?q=hyderabad&output=embed"></iframe>
+</div>
+
+<button onclick="payNow()" class="order-btn">💳 Pay Now</button>
+
+<script src="script.js"></script>
+
+</body>
+</html>
